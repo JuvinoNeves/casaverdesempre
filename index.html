@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Casa Verde Sempre — Dicas de plantio, cultivo e cuidados com plantas</title>
+<meta name="description" content="Casa Verde Sempre: guias práticos de como plantar, regar, adubar, colher e cuidar de hortaliças, ervas, frutíferas, flores, suculentas, plantas de interior, PANCs e medicinais.">
+<meta property="og:title" content="Casa Verde Sempre">
+<meta property="og:description" content="Tudo sobre plantas: plantio, adubação, colheita e cuidados, organizado por categoria.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --verde:#1f5e3b; --verde-2:#2f7d4f; --verde-claro:#e6f1e8; --folha:#7fb069;
+  --terra:#8a5a3b; --creme:#faf7f0; --tinta:#1d2621; --cinza:#5b665f; --linha:#dfe6df;
+  --raio:16px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Inter,system-ui,sans-serif;color:var(--tinta);background:var(--creme);line-height:1.6}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;line-height:1.2;margin:0 0 .5em}
+a{color:var(--verde-2)}
+.wrap{max-width:1140px;margin:0 auto;padding:0 20px}
+/* topo */
+header.topo{position:sticky;top:0;z-index:20;background:rgba(250,247,240,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--linha)}
+.topo .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
+.marca{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--verde);font-family:Fraunces,serif;font-weight:700;font-size:1.25rem}
+.marca svg{width:34px;height:34px}
+nav.menu{display:flex;gap:4px;flex-wrap:wrap}
+nav.menu a{text-decoration:none;color:var(--tinta);font-weight:500;font-size:.93rem;padding:8px 12px;border-radius:999px}
+nav.menu a:hover{background:var(--verde-claro);color:var(--verde)}
+.btn-menu{display:none;background:none;border:1px solid var(--linha);border-radius:10px;padding:8px 12px;font:inherit;cursor:pointer}
+@media(max-width:860px){
+  nav.menu{display:none;position:absolute;top:64px;left:0;right:0;background:var(--creme);flex-direction:column;padding:12px 20px;border-bottom:1px solid var(--linha)}
+  nav.menu.aberto{display:flex}
+  .btn-menu{display:block}
+}
+/* hero */
+.hero{background:linear-gradient(160deg,var(--verde) 0%,#174a2e 100%);color:#fff;padding:72px 0 88px;position:relative;overflow:hidden}
+.hero h1{font-size:clamp(2.1rem,5vw,3.4rem);max-width:720px}
+.hero p{font-size:1.15rem;max-width:620px;opacity:.92}
+.hero .acoes{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.btn{display:inline-block;padding:13px 22px;border-radius:999px;font-weight:600;text-decoration:none;border:0;cursor:pointer;font:inherit;font-weight:600}
+.btn-claro{background:#fff;color:var(--verde)}
+.btn-contorno{border:1.5px solid rgba(255,255,255,.7);color:#fff}
+.btn-verde{background:var(--verde);color:#fff}
+.btn-verde:hover{background:var(--verde-2)}
+.hero-folhas{position:absolute;right:-60px;bottom:-40px;width:420px;opacity:.18}
+@media(max-width:700px){.hero-folhas{width:260px}}
+.busca{margin-top:30px;max-width:560px;display:flex;background:#fff;border-radius:999px;padding:5px}
+.busca input{flex:1;border:0;outline:0;padding:10px 16px;font:inherit;border-radius:999px;color:var(--tinta)}
+.busca button{border-radius:999px}
+/* seções */
+section{padding:72px 0}
+.titulo-secao{text-align:center;max-width:720px;margin:0 auto 40px}
+.titulo-secao h2{font-size:clamp(1.7rem,3.5vw,2.4rem);color:var(--verde)}
+.titulo-secao p{color:var(--cinza)}
+.etiqueta{display:inline-block;font-size:.78rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--terra);margin-bottom:8px}
+/* categorias */
+.grade-cat{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:16px}
+.cat{background:#fff;border:1px solid var(--linha);border-radius:var(--raio);padding:22px;cursor:pointer;text-align:left;font:inherit;color:inherit;transition:.2s}
+.cat:hover,.cat.ativa{border-color:var(--verde-2);box-shadow:0 8px 24px rgba(31,94,59,.12);transform:translateY(-2px)}
+.cat .ico{font-size:2rem}
+.cat h3{font-size:1.15rem;margin:10px 0 4px}
+.cat p{margin:0;color:var(--cinza);font-size:.92rem}
+/* plantas */
+.filtros{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:28px}
+.chip{border:1px solid var(--linha);background:#fff;border-radius:999px;padding:7px 14px;font:inherit;font-size:.9rem;cursor:pointer}
+.chip.ativo{background:var(--verde);color:#fff;border-color:var(--verde)}
+.grade-plantas{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:18px}
+.planta{background:#fff;border:1px solid var(--linha);border-radius:var(--raio);padding:20px;display:flex;flex-direction:column}
+.planta .cab{display:flex;align-items:center;gap:12px;margin-bottom:10px}
+.planta .emo{font-size:1.9rem;width:52px;height:52px;display:grid;place-items:center;background:var(--verde-claro);border-radius:14px;flex:none}
+.planta h3{font-size:1.15rem;margin:0}
+.planta .cient{font-size:.82rem;color:var(--cinza);font-style:italic}
+.planta dl{display:grid;grid-template-columns:auto 1fr;gap:4px 10px;margin:8px 0;font-size:.9rem}
+.planta dt{font-weight:600;color:var(--verde)}
+.planta dd{margin:0}
+.planta .dica{margin-top:auto;background:var(--creme);border-left:3px solid var(--folha);padding:10px 12px;border-radius:8px;font-size:.9rem}
+.vazio{text-align:center;color:var(--cinza);grid-column:1/-1}
+/* guias */
+.fundo-claro{background:#fff}
+.guias{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:18px}
+details.guia{background:var(--creme);border:1px solid var(--linha);border-radius:var(--raio);padding:4px 22px}
+details.guia summary{cursor:pointer;list-style:none;padding:16px 0;font-family:Fraunces,serif;font-size:1.2rem;font-weight:700;color:var(--verde);display:flex;align-items:center;gap:10px}
+details.guia summary::-webkit-details-marker{display:none}
+details.guia summary::after{content:"+";margin-left:auto;font-size:1.4rem;color:var(--terra)}
+details.guia[open] summary::after{content:"–"}
+details.guia ol,details.guia ul{padding-left:20px;margin-top:0}
+details.guia li{margin-bottom:6px}
+/* calendário */
+.tabela-wrap{overflow-x:auto;border:1px solid var(--linha);border-radius:var(--raio);background:#fff}
+table{border-collapse:collapse;width:100%;min-width:640px;font-size:.93rem}
+th,td{padding:12px 14px;text-align:left;border-bottom:1px solid var(--linha);vertical-align:top}
+th{background:var(--verde-claro);color:var(--verde);font-weight:600}
+tr:last-child td{border-bottom:0}
+.nota{font-size:.88rem;color:var(--cinza);margin-top:12px}
+/* problemas */
+.grade-prob{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:16px}
+.prob{background:#fff;border:1px solid var(--linha);border-radius:var(--raio);padding:20px}
+.prob h3{font-size:1.05rem;color:var(--terra)}
+.prob p{margin:.3em 0;font-size:.92rem}
+/* loja */
+.loja{background:linear-gradient(180deg,var(--verde-claro),var(--creme))}
+.grade-loja{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:18px}
+.produto{background:#fff;border-radius:var(--raio);border:1px solid var(--linha);overflow:hidden;display:flex;flex-direction:column}
+.produto .foto{height:150px;display:grid;place-items:center;font-size:4rem;background:linear-gradient(135deg,#eaf4ea,#f6efe3)}
+.produto .corpo{padding:18px;display:flex;flex-direction:column;gap:6px;flex:1}
+.produto h3{font-size:1.1rem;margin:0}
+.produto .preco{font-weight:700;color:var(--verde);font-size:1.1rem}
+.produto .desc{font-size:.9rem;color:var(--cinza);flex:1}
+.produto .btn{text-align:center;margin-top:8px}
+.aviso{background:#fff7e6;border:1px solid #f0d9a8;border-radius:12px;padding:14px 18px;font-size:.92rem;margin-bottom:24px}
+/* youtube / news */
+.duas{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
+.cartao{background:#fff;border:1px solid var(--linha);border-radius:var(--raio);padding:28px}
+.cartao h3{color:var(--verde);font-size:1.4rem}
+.form-news{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.form-news input{flex:1;min-width:200px;padding:12px 14px;border:1px solid var(--linha);border-radius:999px;font:inherit}
+.msg-ok{color:var(--verde-2);font-weight:600;margin-top:10px;display:none}
+/* rodapé */
+footer{background:var(--tinta);color:#cfd8d2;padding:48px 0 28px;font-size:.92rem}
+footer .cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:24px;margin-bottom:28px}
+footer h4{color:#fff;font-family:Fraunces,serif;margin:0 0 10px;font-size:1.05rem}
+footer a{color:#cfd8d2;text-decoration:none;display:block;margin:4px 0}
+footer a:hover{color:#fff}
+footer .copy{border-top:1px solid #34403a;padding-top:18px;text-align:center;font-size:.85rem}
+</style>
+</head>
+<body>
+
+<header class="topo">
+  <div class="wrap">
+    <a class="marca" href="#inicio" aria-label="Casa Verde Sempre — início">
+      <svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="30" fill="#1f5e3b"/><path d="M32 50V26" stroke="#fff" stroke-width="3" stroke-linecap="round"/><path d="M32 34c-10 0-15-7-15-15 9 0 15 5 15 15z" fill="#7fb069"/><path d="M32 30c0-10 6-16 16-16 0 10-6 16-16 16z" fill="#a8d08d"/><path d="M20 50h24" stroke="#c89f7a" stroke-width="3" stroke-linecap="round"/></svg>
+      Casa Verde Sempre
+    </a>
+    <button class="btn-menu" id="btnMenu" aria-label="Abrir menu">☰ Menu</button>
+    <nav class="menu" id="menu">
+      <a href="#categorias">Categorias</a>
+      <a href="#plantas">Plantas</a>
+      <a href="#guias">Guias</a>
+      <a href="#calendario">Calendário</a>
+      <a href="#problemas">Problemas</a>
+      <a href="#loja">Loja</a>
+      <a href="#youtube">Vídeos</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" id="inicio">
+  <svg class="hero-folhas" viewBox="0 0 200 200" aria-hidden="true"><g fill="#fff"><path d="M100 190C40 150 20 90 60 20c30 40 50 100 40 170z"/><path d="M110 190c10-70 40-120 80-140 10 60-20 120-80 140z"/><path d="M95 190C60 170 10 160 0 120c40-10 80 20 95 70z"/></g></svg>
+  <div class="wrap">
+    <span class="etiqueta" style="color:#cfe8c4">Jardinagem sem complicação</span>
+    <h1>Plante, cuide e colha com confiança.</h1>
+    <p>Guias práticos sobre hortaliças, ervas, frutíferas, flores, suculentas, plantas de interior, PANCs e medicinais. Do preparo do solo à colheita, tudo explicado de um jeito simples.</p>
+    <form class="busca" id="formBusca" role="search">
+      <input id="campoBusca" type="search" placeholder="Busque uma planta: tomate, manjericão, jiboia…" aria-label="Buscar planta">
+      <button class="btn btn-verde" type="submit">Buscar</button>
+    </form>
+    <div class="acoes">
+      <a class="btn btn-claro" href="#guias">Comece pelos guias</a>
+      <a class="btn btn-contorno" href="#loja">Ver a lojinha</a>
+    </div>
+  </div>
+</section>
+
+<section id="categorias">
+  <div class="wrap">
+    <div class="titulo-secao">
+      <span class="etiqueta">Explore</span>
+      <h2>Plantas por categoria</h2>
+      <p>Escolha uma categoria para ver as plantas, com luz, rega, tempo até a colheita e uma dica de quem cultiva.</p>
+    </div>
+    <div class="grade-cat" id="gradeCat"></div>
+  </div>
+</section>
+
+<section id="plantas" class="fundo-claro">
+  <div class="wrap">
+    <div class="titulo-secao">
+      <span class="etiqueta">Fichas de cultivo</span>
+      <h2>Guia de plantas</h2>
+      <p id="contagem"></p>
+    </div>
+    <div class="filtros" id="filtros"></div>
+    <div class="grade-plantas" id="gradePlantas"></div>
+  </div>
+</section>
+
+<section id="guias">
+  <div class="wrap">
+    <div class="titulo-secao">
+      <span class="etiqueta">Passo a passo</span>
+      <h2>Guias essenciais</h2>
+      <p>O básico que faz toda a diferença: solo, plantio, rega, adubação, poda, colheita e mudas.</p>
+    </div>
+    <div class="guias">
+      <details class="guia" open>
+        <summary>🪴 Como preparar o solo e o substrato</summary>
+        <ol>
+          <li><strong>Canteiro:</strong> afofe a terra a 20–30 cm de profundidade, retire pedras e raízes e misture 3–5 kg de composto ou esterco curtido por m².</li>
+          <li><strong>Vasos:</strong> uma mistura versátil é 1 parte de terra vegetal, 1 de composto orgânico (ou húmus de minhoca) e 1 de areia grossa, perlita ou casca de arroz carbonizada.</li>
+          <li><strong>Drenagem:</strong> o vaso precisa de furos. Uma manta de drenagem ou uma camada fina de argila expandida ajuda a não entupir.</li>
+          <li><strong>pH:</strong> a maioria das hortaliças prefere solo levemente ácido (pH 6,0–6,8). Em solo muito ácido, faça calagem com calcário dolomítico 30–60 dias antes do plantio, de preferência com base em análise de solo.</li>
+          <li><strong>Cobertura morta:</strong> palha, folhas secas ou casca de pinus sobre o solo mantêm a umidade e reduzem ervas daninhas.</li>
+        </ol>
+      </details>
+      <details class="guia">
+        <summary>🌱 Como plantar: sementes, mudas e estacas</summary>
+        <ol>
+          <li><strong>Profundidade:</strong> regra prática — enterre a semente a 2 ou 3 vezes o seu tamanho. Sementes minúsculas (alface, cenoura) vão quase na superfície.</li>
+          <li><strong>Sementeira:</strong> use bandejas ou copinhos com substrato fino e úmido. Transplante quando a muda tiver 4 a 6 folhas verdadeiras.</li>
+          <li><strong>Semeadura direta:</strong> cenoura, rabanete, beterraba, feijão e milho preferem ser semeados no local definitivo, porque não gostam de transplante.</li>
+          <li><strong>Estaquia:</strong> corte um ramo de 10–15 cm abaixo de um nó, retire as folhas de baixo e coloque em substrato úmido ou água (jiboia, alecrim, hortelã, manjericão).</li>
+          <li><strong>Transplante:</strong> prefira o fim da tarde ou dias nublados. Regue bem antes e depois.</li>
+          <li><strong>Espaçamento:</strong> siga o espaçamento indicado na embalagem da semente. Plantas apertadas competem e adoecem mais.</li>
+        </ol>
+      </details>
+      <details class="guia">
+        <summary>💧 Como regar do jeito certo</summary>
+        <ul>
+          <li><strong>Teste do dedo:</strong> enfie o dedo 2–3 cm no solo. Se estiver seco, regue; se estiver úmido, espere.</li>
+          <li><strong>Horário:</strong> de manhã cedo ou no fim da tarde. Evite molhar as folhas no sol forte e à noite (favorece fungos).</li>
+          <li><strong>Profundidade:</strong> regas mais fartas e menos frequentes criam raízes profundas e plantas mais resistentes.</li>
+          <li><strong>Vasos:</strong> regue até a água escorrer pelos furos e nunca deixe água parada no pratinho (risco de raiz podre e dengue).</li>
+          <li><strong>Excesso:</strong> folhas amareladas e moles, solo sempre encharcado e cheiro ruim indicam rega demais — o erro mais comum.</li>
+          <li><strong>Economia:</strong> gotejamento, garrafa PET furada e cobertura morta reduzem bastante o consumo de água.</li>
+        </ul>
+      </details>
+      <details class="guia">
+        <summary>🧪 Adubação: orgânica e mineral</summary>
+        <ul>
+          <li><strong>N (nitrogênio):</strong> folhas verdes e crescimento. Fontes: esterco curtido, borra de café (com moderação), torta de mamona.</li>
+          <li><strong>P (fósforo):</strong> raízes, flores e frutos. Fontes: farinha de ossos, fosfato natural.</li>
+          <li><strong>K (potássio):</strong> qualidade dos frutos e resistência. Fontes: cinza de madeira (pouca, pois sobe o pH), casca de banana compostada.</li>
+          <li><strong>Plantio:</strong> misture composto ou húmus no solo. <strong>Cobertura:</strong> a cada 20–30 dias nas hortaliças em crescimento.</li>
+          <li><strong>NPK mineral:</strong> 10-10-10 é de uso geral; 4-14-8 favorece floração e frutificação. Use sempre a dose da embalagem — excesso queima as raízes.</li>
+          <li><strong>Regra de ouro:</strong> nunca use esterco fresco. Ele precisa curtir (descansar) por 60–90 dias.</li>
+        </ul>
+      </details>
+      <details class="guia">
+        <summary>♻️ Compostagem caseira</summary>
+        <ol>
+          <li>Separe um balde ou caixa com furos e tampa (ou um cantinho no quintal).</li>
+          <li>Alterne camadas de <strong>“verdes”</strong> (cascas de frutas e legumes, borra de café, aparas de grama) e <strong>“marrons”</strong> (folhas secas, serragem sem tinta, papelão picado), em proporção de cerca de 1 para 2.</li>
+          <li>Não coloque carne, laticínios, óleo, fezes de animais domésticos nem plantas doentes.</li>
+          <li>Mantenha úmido como uma esponja torcida e revire a cada 1–2 semanas para entrar ar.</li>
+          <li>Em 2 a 4 meses o material fica escuro, solto e com cheiro de terra de mata: está pronto.</li>
+          <li>Opção para apartamento: minhocário doméstico, que também produz o biofertilizante líquido (“chorume”), usado diluído 1:10 em água.</li>
+        </ol>
+      </details>
+      <details class="guia">
+        <summary>✂️ Poda e condução</summary>
+        <ul>
+          <li><strong>Ferramenta limpa:</strong> desinfete a tesoura com álcool entre uma planta e outra.</li>
+          <li><strong>Ervas:</strong> pode sempre acima de um par de folhas; isso faz a planta ramificar. Corte as flores do manjericão para prolongar a produção.</li>
+          <li><strong>Tomate:</strong> retire os “ladrões” (brotos nas axilas das folhas) e tutore com estaca ou fitilho.</li>
+          <li><strong>Frutíferas:</strong> poda de formação nos primeiros anos e poda de limpeza (galhos secos, doentes e cruzados) no fim do inverno.</li>
+          <li><strong>Roseiras:</strong> poda principal no inverno (junho–agosto, no Sul e Sudeste), cortando acima de uma gema voltada para fora.</li>
+        </ul>
+      </details>
+      <details class="guia">
+        <summary>🧺 Colheita e conservação</summary>
+        <ul>
+          <li><strong>Hora certa:</strong> colha de manhã cedo, quando as plantas estão mais hidratadas.</li>
+          <li><strong>Folhosas:</strong> colha as folhas de fora e deixe o miolo crescer (alface crespa, couve, rúcula).</li>
+          <li><strong>Raízes:</strong> cenoura e beterraba estão prontas quando o “ombro” aparece no solo com o diâmetro esperado.</li>
+          <li><strong>Frutos:</strong> tomate pode ser colhido “de vez” (começando a mudar de cor) e amadurecer em casa; pimentão verde ou maduro.</li>
+          <li><strong>Ervas:</strong> para secar, faça maços pequenos e pendure de cabeça para baixo em local seco, ventilado e na sombra.</li>
+          <li><strong>Sementes:</strong> guarde sementes das melhores plantas, bem secas, em pote fechado, na geladeira, com etiqueta e data.</li>
+        </ul>
+      </details>
+      <details class="guia">
+        <summary>🏙️ Horta em apartamento</summary>
+        <ul>
+          <li>Hortaliças de fruto precisam de pelo menos <strong>6 horas de sol direto</strong>; folhosas e ervas toleram 3–4 horas.</li>
+          <li>Varanda voltada para o norte recebe mais sol no Brasil; sul recebe menos.</li>
+          <li>Comece com o que é fácil: cebolinha, salsinha, manjericão, hortelã, alface, rúcula, pimenta e tomate-cereja.</li>
+          <li>Vasos de 20–30 cm de profundidade servem para a maioria das ervas e folhosas; tomate pede 40 cm ou mais.</li>
+          <li>Hortas verticais e floreiras otimizam espaço; cuidado com o peso em sacadas.</li>
+        </ul>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section id="calendario" class="fundo-claro">
+  <div class="wrap">
+    <div class="titulo-secao">
+      <span class="etiqueta">Quando plantar</span>
+      <h2>Calendário de plantio (Brasil)</h2>
+      <p>Referência geral para as regiões Sul e Sudeste. No Norte, Nordeste e Centro-Oeste, mais quentes, a época depende mais das chuvas e muitas culturas de clima frio só vão bem no período mais ameno ou em altitude.</p>
+    </div>
+    <div class="tabela-wrap">
+      <table>
+        <thead><tr><th>Estação</th><th>Meses</th><th>O que plantar</th></tr></thead>
+        <tbody>
+          <tr><td><strong>🌸 Primavera</strong></td><td>set – nov</td><td>Tomate, pimentão, pimenta, berinjela, abobrinha, pepino, milho, feijão, quiabo, melancia, manjericão, girassol</td></tr>
+          <tr><td><strong>☀️ Verão</strong></td><td>dez – fev</td><td>Quiabo, abóbora, milho, feijão-de-corda, batata-doce, mandioca, maxixe, alface de verão, cebolinha, coentro (calor)</td></tr>
+          <tr><td><strong>🍂 Outono</strong></td><td>mar – mai</td><td>Alface, rúcula, couve, brócolis, couve-flor, repolho, cenoura, beterraba, rabanete, ervilha, alho, cebola, salsinha</td></tr>
+          <tr><td><strong>❄️ Inverno</strong></td><td>jun – ago</td><td>Alface, espinafre, couve, repolho, brócolis, alho-poró, ervilha, morango (mudas), fava, nabo; poda de frutíferas e roseiras</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="nota">Dica: confira sempre a embalagem da semente, que indica a época por região. Ervas como cebolinha, salsinha e hortelã podem ser plantadas quase o ano todo.</p>
+  </div>
+</section>
+
+<section id="problemas">
+  <div class="wrap">
+    <div class="titulo-secao">
+      <span class="etiqueta">Diagnóstico rápido</span>
+      <h2>Pragas e problemas comuns</h2>
+      <p>Identifique o sintoma e veja soluções caseiras e de baixo impacto.</p>
+    </div>
+    <div class="grade-prob">
+      <div class="prob"><h3>🐜 Pulgões</h3><p><strong>Sinal:</strong> pequenos insetos verdes ou pretos nos brotos, folhas enroladas.</p><p><strong>O que fazer:</strong> jato d’água, calda de sabão neutro (1 colher de sopa por litro) ou óleo de neem; joaninhas são aliadas.</p></div>
+      <div class="prob"><h3>🤍 Cochonilhas</h3><p><strong>Sinal:</strong> bolinhas brancas algodonosas ou escamas marrons no caule.</p><p><strong>O que fazer:</strong> remova com cotonete com álcool; aplique óleo mineral ou de neem a cada 7 dias.</p></div>
+      <div class="prob"><h3>🐛 Lagartas</h3><p><strong>Sinal:</strong> folhas roídas, buracos e fezes escuras.</p><p><strong>O que fazer:</strong> catação manual; produtos à base de <em>Bacillus thuringiensis</em> (Bt), que são biológicos.</p></div>
+      <div class="prob"><h3>🐌 Lesmas e caracóis</h3><p><strong>Sinal:</strong> folhas comidas à noite, rastro brilhante.</p><p><strong>O que fazer:</strong> armadilhas com cerveja, barreira de cinza ou casca de ovo moída, catação ao anoitecer (use luvas).</p></div>
+      <div class="prob"><h3>🍄 Oídio</h3><p><strong>Sinal:</strong> pó branco nas folhas (abobrinha, pepino, roseira).</p><p><strong>O que fazer:</strong> retire folhas atacadas, melhore a ventilação; leite diluído (1:9) pulverizado ajuda na prevenção.</p></div>
+      <div class="prob"><h3>💛 Folhas amarelas</h3><p><strong>Causa provável:</strong> excesso de água (folhas moles) ou falta de nitrogênio (amarelam as folhas mais velhas primeiro).</p><p><strong>O que fazer:</strong> revise a rega e adube com composto ou húmus.</p></div>
+      <div class="prob"><h3>🤎 Pontas secas</h3><p><strong>Causa provável:</strong> ar seco, falta de água, excesso de adubo ou sol forte demais.</p><p><strong>O que fazer:</strong> ajuste a luz, borrife água nas folhagens tropicais e reduza o adubo.</p></div>
+      <div class="prob"><h3>🌿 Planta “esticada”</h3><p><strong>Causa:</strong> falta de luz (estiolamento) — caule fino, longo e pálido.</p><p><strong>O que fazer:</strong> leve para um local mais iluminado aos poucos e pode para ramificar.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="loja" class="loja">
+  <div class="wrap">
+    <div class="titulo-secao">
+      <span class="etiqueta">Lojinha Casa Verde</span>
+      <h2>Mudas e kits para começar</h2>
+      <p>Mudas selecionadas, kits de horta e insumos. Faça seu pedido e combinamos entrega ou retirada.</p>
+    </div>
+    <div class="aviso">🛠️ <strong>Loja em preparação.</strong> Os produtos e preços abaixo são exemplos. Em breve, pedidos pelo WhatsApp e pagamento por Pix.</div>
+    <div class="grade-loja" id="gradeLoja"></div>
+  </div>
+</section>
+
+<section id="youtube" class="fundo-claro">
+  <div class="wrap">
+    <div class="duas">
+      <div class="cartao">
+        <span class="etiqueta">Vídeos curtos</span>
+        <h3>▶️ Casa Verde Sempre no YouTube</h3>
+        <p>Dicas rápidas de 1 minuto: como plantar manjericão no vaso, o teste do dedo para regar, compostagem em balde, como multiplicar jiboia e muito mais.</p>
+        <a class="btn btn-verde" href="https://www.youtube.com/@casaverdesempre" target="_blank" rel="noopener">Inscreva-se no canal</a>
+      </div>
+      <div class="cartao">
+        <span class="etiqueta">Novidades</span>
+        <h3>🌿 Receba dicas no seu e-mail</h3>
+        <p>Uma dica por semana sobre o que plantar e como cuidar, de acordo com a estação.</p>
+        <form class="form-news" id="formNews">
+          <input type="email" required placeholder="seu@email.com" aria-label="Seu e-mail">
+          <button class="btn btn-verde" type="submit">Quero receber</button>
+        </form>
+        <p class="msg-ok" id="msgNews">Obrigado! O cadastro de e-mails será ativado em breve.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <h4>Casa Verde Sempre</h4>
+        <p>Informação confiável e prática para quem quer ter mais verde em casa, no quintal ou na varanda.</p>
+      </div>
+      <div>
+        <h4>Conteúdo</h4>
+        <a href="#categorias">Categorias</a>
+        <a href="#guias">Guias</a>
+        <a href="#calendario">Calendário de plantio</a>
+        <a href="#problemas">Pragas e problemas</a>
+      </div>
+      <div>
+        <h4>Contato</h4>
+        <a href="mailto:casaverdesempre@gmail.com">casaverdesempre@gmail.com</a>
+        <a href="https://www.youtube.com/@casaverdesempre" target="_blank" rel="noopener">YouTube</a>
+        <a href="#loja">Lojinha</a>
+      </div>
+    </div>
+    <div class="copy">© <span id="ano"></span> Casa Verde Sempre · www.casaverdesempre.com.br · As informações têm caráter educativo. Plantas medicinais não substituem orientação médica.</div>
+  </div>
+</footer>
+
+<script>
+const CATEGORIAS = [
+  {id:"hortalicas", nome:"Hortaliças e legumes", ico:"🥬", desc:"Folhas, raízes e frutos para a horta de casa."},
+  {id:"ervas", nome:"Ervas e temperos", ico:"🌿", desc:"Aromáticas fáceis para vaso e janela."},
+  {id:"frutiferas", nome:"Frutíferas", ico:"🍋", desc:"Árvores e arbustos de fruta, inclusive em vaso."},
+  {id:"flores", nome:"Flores e ornamentais", ico:"🌺", desc:"Cor para jardins, canteiros e varandas."},
+  {id:"suculentas", nome:"Suculentas e cactos", ico:"🌵", desc:"Pouca água, muito sol e quase nenhum trabalho."},
+  {id:"interior", nome:"Plantas de interior", ico:"🪴", desc:"Folhagens que vivem bem dentro de casa."},
+  {id:"pancs", nome:"PANCs", ico:"🌼", desc:"Plantas alimentícias não convencionais."},
+  {id:"medicinais", nome:"Medicinais e chás", ico:"🍵", desc:"Plantas de uso tradicional em chás."}
+];
+
+const PLANTAS = [
+  // Hortaliças
+  {n:"Alface", c:"Lactuca sativa", cat:"hortalicas", e:"🥬", luz:"Sol pleno a meia-sombra", rega:"Frequente, solo sempre úmido", colheita:"45–70 dias", dica:"No calor, escolha variedades de verão (crespa, americana) para não “pendoar” (florescer e amargar)."},
+  {n:"Tomate", c:"Solanum lycopersicum", cat:"hortalicas", e:"🍅", luz:"Sol pleno (6 h+)", rega:"Regular, no pé, sem molhar folhas", colheita:"90–120 dias", dica:"Tutore desde cedo, tire os brotos laterais e regue de forma constante para evitar a podridão apical (fundo preto)."},
+  {n:"Cenoura", c:"Daucus carota", cat:"hortalicas", e:"🥕", luz:"Sol pleno", rega:"Regular", colheita:"80–100 dias", dica:"Semeie direto em solo fofo e sem pedras; raleie as mudas deixando 5–8 cm entre elas."},
+  {n:"Couve", c:"Brassica oleracea var. acephala", cat:"hortalicas", e:"🥬", luz:"Sol pleno", rega:"Regular", colheita:"60–80 dias, por meses", dica:"Colha as folhas de baixo para cima; um pé bem adubado produz por mais de um ano."},
+  {n:"Rúcula", c:"Eruca sativa", cat:"hortalicas", e:"🥗", luz:"Sol a meia-sombra", rega:"Frequente", colheita:"30–45 dias", dica:"Semeie um pouco a cada 15 dias para ter sempre folhas novas e menos picantes."},
+  {n:"Pimentão", c:"Capsicum annuum", cat:"hortalicas", e:"🫑", luz:"Sol pleno", rega:"Regular", colheita:"100–120 dias", dica:"Pimentão vermelho e amarelo são o verde deixado no pé até amadurecer — ficam mais doces."},
+  {n:"Rabanete", c:"Raphanus sativus", cat:"hortalicas", e:"🔴", luz:"Sol pleno", rega:"Frequente", colheita:"25–35 dias", dica:"O mais rápido da horta — ótimo para crianças. Colha logo para não ficar fibroso e oco."},
+  {n:"Abobrinha", c:"Cucurbita pepo", cat:"hortalicas", e:"🥒", luz:"Sol pleno", rega:"Regular, sem molhar folhas", colheita:"45–60 dias", dica:"Se as flores caem sem formar frutos, falta polinização: passe o pólen da flor macho na fêmea com um pincel."},
+  {n:"Beterraba", c:"Beta vulgaris", cat:"hortalicas", e:"🟣", luz:"Sol pleno", rega:"Regular", colheita:"60–80 dias", dica:"Cada “semente” é um glomérulo com várias sementes; raleie deixando a muda mais forte."},
+  {n:"Feijão-vagem", c:"Phaseolus vulgaris", cat:"hortalicas", e:"🫛", luz:"Sol pleno", rega:"Regular", colheita:"55–70 dias", dica:"Leguminosa: fixa nitrogênio no solo, ótima para fazer rotação com folhosas."},
+  // Ervas
+  {n:"Manjericão", c:"Ocimum basilicum", cat:"ervas", e:"🌿", luz:"Sol pleno", rega:"Regular", colheita:"40–60 dias", dica:"Corte os pendões florais assim que aparecerem: a planta fica mais cheia e perfumada."},
+  {n:"Cebolinha", c:"Allium fistulosum", cat:"ervas", e:"🧅", luz:"Sol a meia-sombra", rega:"Regular", colheita:"60–80 dias, rebrota", dica:"Plante as raízes da cebolinha comprada na feira: ela rebrota em poucos dias."},
+  {n:"Salsinha", c:"Petroselinum crispum", cat:"ervas", e:"🌱", luz:"Sol a meia-sombra", rega:"Regular", colheita:"60–90 dias", dica:"Germina devagar (até 3 semanas). Deixe as sementes de molho em água morna por 12 h antes."},
+  {n:"Hortelã", c:"Mentha spp.", cat:"ervas", e:"🍃", luz:"Meia-sombra", rega:"Frequente", colheita:"60 dias, contínua", dica:"Muito invasiva: plante em vaso separado para não tomar conta do canteiro."},
+  {n:"Alecrim", c:"Salvia rosmarinus", cat:"ervas", e:"🌲", luz:"Sol pleno", rega:"Pouca; deixe secar entre regas", colheita:"90 dias em diante", dica:"Morre mais por excesso de água do que por falta. Use substrato bem drenado com areia."},
+  {n:"Orégano", c:"Origanum vulgare", cat:"ervas", e:"🌿", luz:"Sol pleno", rega:"Moderada", colheita:"80–90 dias", dica:"O sabor fica mais intenso quando a planta recebe bastante sol e as folhas são secas."},
+  {n:"Coentro", c:"Coriandrum sativum", cat:"ervas", e:"🌿", luz:"Sol pleno", rega:"Regular", colheita:"30–50 dias", dica:"Semeie direto no local; transplante faz o coentro florescer cedo."},
+  {n:"Tomilho", c:"Thymus vulgaris", cat:"ervas", e:"🌿", luz:"Sol pleno", rega:"Pouca", colheita:"90 dias em diante", dica:"Combina com alecrim e orégano no mesmo vaso, pois todos gostam de sol e solo seco."},
+  // Frutíferas
+  {n:"Limoeiro", c:"Citrus × limon / Citrus latifolia", cat:"frutiferas", e:"🍋", luz:"Sol pleno", rega:"Regular; menos no inverno", colheita:"2–3 anos (muda enxertada)", dica:"Prefira mudas enxertadas e certificadas: produzem mais cedo e são mais sadias. Em vaso, use no mínimo 60 litros."},
+  {n:"Morango", c:"Fragaria × ananassa", cat:"frutiferas", e:"🍓", luz:"Sol pleno", rega:"Frequente, sem encharcar", colheita:"60–90 dias após o plantio da muda", dica:"Forre o solo com palha para os frutos não encostarem na terra e não apodrecerem."},
+  {n:"Acerola", c:"Malpighia emarginata", cat:"frutiferas", e:"🍒", luz:"Sol pleno", rega:"Moderada", colheita:"1–2 anos", dica:"Uma das frutas mais ricas em vitamina C; aguenta bem vaso grande e poda para ficar compacta."},
+  {n:"Pitanga", c:"Eugenia uniflora", cat:"frutiferas", e:"🍒", luz:"Sol pleno", rega:"Moderada", colheita:"2–3 anos", dica:"Nativa do Brasil, rústica e atrativa para pássaros. Funciona como cerca-viva."},
+  {n:"Jabuticaba", c:"Plinia cauliflora", cat:"frutiferas", e:"🫐", luz:"Sol pleno", rega:"Frequente; gosta de umidade", colheita:"Híbrida: 2–4 anos; de semente: 8+ anos", dica:"A jabuticaba híbrida (ou ‘precoce’) frutifica mais cedo e várias vezes no ano, até em vaso."},
+  {n:"Maracujá", c:"Passiflora edulis", cat:"frutiferas", e:"🟡", luz:"Sol pleno", rega:"Regular", colheita:"8–10 meses", dica:"Trepadeira: precisa de caramanchão ou espaldeira. A abelha mamangava é a principal polinizadora."},
+  {n:"Banana", c:"Musa spp.", cat:"frutiferas", e:"🍌", luz:"Sol pleno", rega:"Frequente", colheita:"12–18 meses", dica:"Depois que o cacho é colhido, corte o pseudocaule; o broto ao lado (filhote) dará o próximo cacho."},
+  // Flores
+  {n:"Rosa", c:"Rosa spp.", cat:"flores", e:"🌹", luz:"Sol pleno (6 h+)", rega:"Regular, no pé", colheita:"Floração na primavera e verão", dica:"Poda anual no inverno e adubação rica em fósforo garantem muitas flores."},
+  {n:"Orquídea Phalaenopsis", c:"Phalaenopsis spp.", cat:"flores", e:"🌸", luz:"Claridade, sem sol direto forte", rega:"1–2 vezes por semana, quando o substrato secar", colheita:"Floresce 1–2 vezes ao ano", dica:"Nunca plante em terra: use casca de pinus ou musgo. Raízes prateadas pedem água; verdes estão hidratadas."},
+  {n:"Girassol", c:"Helianthus annuus", cat:"flores", e:"🌻", luz:"Sol pleno", rega:"Regular", colheita:"60–90 dias até florir", dica:"Semeie direto. Variedades anãs ficam lindas em vaso na varanda."},
+  {n:"Lavanda", c:"Lavandula spp.", cat:"flores", e:"💜", luz:"Sol pleno", rega:"Pouca", colheita:"Floração no verão", dica:"Solo bem drenado e sem excesso de adubo. Odeia umidade parada nas raízes."},
+  {n:"Hibisco", c:"Hibiscus rosa-sinensis", cat:"flores", e:"🌺", luz:"Sol pleno", rega:"Regular", colheita:"Floresce quase o ano todo", dica:"Cada flor dura um dia, mas a planta produz sem parar. Ótima para cercas-vivas."},
+  {n:"Lírio-da-paz", c:"Spathiphyllum wallisii", cat:"flores", e:"🤍", luz:"Meia-sombra", rega:"Regular; ela murcha quando tem sede", colheita:"Floração na primavera", dica:"Avisa quando quer água: as folhas murcham e se recuperam logo após a rega. Tóxica para pets."},
+  // Suculentas
+  {n:"Babosa (Aloe vera)", c:"Aloe vera", cat:"suculentas", e:"🌵", luz:"Sol pleno a meia-sombra", rega:"A cada 10–15 dias", colheita:"Folhas após 2–3 anos", dica:"Retire os filhotes da base para fazer novas mudas. O uso interno não é recomendado."},
+  {n:"Echeveria", c:"Echeveria spp.", cat:"suculentas", e:"🪷", luz:"Sol pleno", rega:"Só quando o substrato estiver seco", colheita:"—", dica:"Multiplique por folhas: deixe uma folha secar 2 dias e apoie sobre substrato seco."},
+  {n:"Cacto-bola", c:"Echinocactus grusonii", cat:"suculentas", e:"🌵", luz:"Sol pleno", rega:"Muito pouca; quase nada no inverno", colheita:"—", dica:"Substrato com 50% de areia grossa. Manuseie com jornal dobrado ou luvas grossas."},
+  {n:"Rosa-de-pedra / Jade", c:"Crassula ovata", cat:"suculentas", e:"🌳", luz:"Sol a meia-sombra", rega:"Pouca", colheita:"—", dica:"Fica com aspecto de mini-árvore; ótima para iniciantes e para bonsai."},
+  {n:"Rosário", c:"Curio rowleyanus", cat:"suculentas", e:"📿", luz:"Muita claridade", rega:"Pouca", colheita:"—", dica:"Pendente: lindo em vasos suspensos. Se as bolinhas murcharem, falta água; se ficarem moles, sobra."},
+  // Interior
+  {n:"Jiboia", c:"Epipremnum aureum", cat:"interior", e:"🍃", luz:"Meia-sombra a claridade indireta", rega:"Quando o topo do solo secar", colheita:"—", dica:"A mais fácil de multiplicar: ramos com um nó enraízam em um copo de água. Tóxica para pets."},
+  {n:"Costela-de-adão", c:"Monstera deliciosa", cat:"interior", e:"🌿", luz:"Claridade indireta", rega:"Semanal, moderada", colheita:"—", dica:"Os recortes nas folhas aparecem com a maturidade e com boa luz. Ofereça um tutor de fibra para ela subir."},
+  {n:"Espada-de-são-jorge", c:"Dracaena trifasciata", cat:"interior", e:"🗡️", luz:"Da sombra ao sol", rega:"A cada 15–20 dias", colheita:"—", dica:"Quase indestrutível. O único jeito de matar é regando demais."},
+  {n:"Zamioculca", c:"Zamioculcas zamiifolia", cat:"interior", e:"🌱", luz:"Sombra a meia-sombra", rega:"A cada 15 dias", colheita:"—", dica:"Guarda água em rizomas: aguenta esquecimentos e ambientes com pouca luz, como escritórios."},
+  {n:"Samambaia", c:"Nephrolepis exaltata", cat:"interior", e:"🌿", luz:"Meia-sombra, sem sol direto", rega:"Frequente; gosta de umidade no ar", colheita:"—", dica:"Folhas secando nas pontas indicam ar seco: borrife água e mantenha longe do ar-condicionado."},
+  {n:"Maranta / Calathea", c:"Goeppertia spp.", cat:"interior", e:"🪴", luz:"Meia-sombra", rega:"Solo levemente úmido", colheita:"—", dica:"As folhas se fecham à noite como se “rezassem”. Prefere água filtrada ou de chuva."},
+  // PANCs
+  {n:"Ora-pro-nóbis", c:"Pereskia aculeata", cat:"pancs", e:"🌿", luz:"Sol pleno", rega:"Moderada", colheita:"Folhas após 4–6 meses", dica:"Folhas muito ricas em proteína; usadas refogadas, em omeletes e pães. Cresce como cerca-viva com espinhos."},
+  {n:"Taioba", c:"Xanthosoma taioba", cat:"pancs", e:"🍃", luz:"Meia-sombra", rega:"Frequente", colheita:"Folhas após 3–4 meses", dica:"Só consuma COZIDA e tenha certeza da identificação: é parecida com a tinhorão, que é tóxica."},
+  {n:"Peixinho-da-horta", c:"Stachys byzantina", cat:"pancs", e:"🐟", luz:"Sol pleno", rega:"Moderada", colheita:"60–90 dias", dica:"As folhas aveludadas empanadas e fritas lembram peixe frito — daí o nome."},
+  {n:"Capuchinha", c:"Tropaeolum majus", cat:"pancs", e:"🧡", luz:"Sol pleno", rega:"Moderada", colheita:"50–60 dias", dica:"Flores e folhas comestíveis, com sabor picante de agrião. Também atrai pulgões para longe da horta."},
+  {n:"Bertalha", c:"Basella alba", cat:"pancs", e:"🌿", luz:"Sol pleno", rega:"Frequente", colheita:"60–70 dias", dica:"Trepadeira que substitui o espinafre no calor; ótima refogada com ovos."},
+  // Medicinais
+  {n:"Camomila", c:"Matricaria chamomilla", cat:"medicinais", e:"🌼", luz:"Sol pleno", rega:"Moderada", colheita:"60–90 dias (flores)", dica:"Colha as flores quando estiverem bem abertas e seque à sombra para o chá."},
+  {n:"Capim-santo / Capim-limão", c:"Cymbopogon citratus", cat:"medicinais", e:"🌾", luz:"Sol pleno", rega:"Regular", colheita:"3–4 meses", dica:"Multiplique dividindo a touceira. Corte as folhas a 20 cm do chão para rebrotar."},
+  {n:"Erva-cidreira (melissa)", c:"Melissa officinalis", cat:"medicinais", e:"🍃", luz:"Sol a meia-sombra", rega:"Regular", colheita:"60–90 dias", dica:"Perfume de limão nas folhas. Planta-se por sementes ou divisão de touceira."},
+  {n:"Boldo", c:"Plectranthus barbatus", cat:"medicinais", e:"🌿", luz:"Sol a meia-sombra", rega:"Moderada", colheita:"3 meses", dica:"Pega fácil por estaca. Uso tradicional; não é indicado para gestantes — consulte um profissional de saúde."},
+  {n:"Gengibre", c:"Zingiber officinale", cat:"medicinais", e:"🫚", luz:"Meia-sombra", rega:"Regular", colheita:"8–10 meses", dica:"Plante um pedaço de rizoma com “olhos” (gemas) a 5 cm de profundidade. Colha quando as folhas secarem."}
+];
+
+const PRODUTOS = [
+  {n:"Kit Horta de Temperos", e:"🌿", p:"R$ 59,90", d:"3 mudas (manjericão, cebolinha e salsinha) + substrato e guia de cuidados."},
+  {n:"Muda de Jiboia", e:"🍃", p:"R$ 29,90", d:"Vaso de 15 cm, pronta para pendurar ou deixar na estante."},
+  {n:"Espada-de-são-jorge", e:"🗡️", p:"R$ 39,90", d:"Vaso de 17 cm. Ideal para iniciantes e cantos com pouca luz."},
+  {n:"Suculentas — trio", e:"🪷", p:"R$ 34,90", d:"Três suculentas sortidas em vasinhos de 9 cm."},
+  {n:"Húmus de minhoca 2 kg", e:"🪱", p:"R$ 24,90", d:"Adubo orgânico pronto para usar em vasos e canteiros."},
+  {n:"Muda de Pitanga", e:"🍒", p:"R$ 44,90", d:"Frutífera nativa, muda com 40–50 cm."}
+];
+
+const WHATSAPP = ""; // ex.: "5511999999999" — preencher quando o número da loja estiver definido
+
+let categoriaAtual = "todas";
+let termo = "";
+
+function el(tag, attrs={}, html=""){ const e=document.createElement(tag); Object.entries(attrs).forEach(([k,v])=>e.setAttribute(k,v)); e.innerHTML=html; return e; }
+const semAcento = s => s.normalize("NFD").replace(/[̀-ͯ]/g,"").toLowerCase();
+
+function montarCategorias(){
+  const g=document.getElementById("gradeCat");
+  CATEGORIAS.forEach(c=>{
+    const qtd=PLANTAS.filter(p=>p.cat===c.id).length;
+    const b=el("button",{class:"cat",type:"button"},`<div class="ico">${c.ico}</div><h3>${c.nome}</h3><p>${c.desc}</p><p style="margin-top:8px;color:var(--verde-2);font-weight:600">${qtd} plantas →</p>`);
+    b.onclick=()=>{ categoriaAtual=c.id; termo=""; document.getElementById("campoBusca").value=""; render(); document.getElementById("plantas").scrollIntoView({behavior:"smooth"}); };
+    g.appendChild(b);
+  });
+}
+function montarFiltros(){
+  const f=document.getElementById("filtros"); f.innerHTML="";
+  [{id:"todas",nome:"Todas",ico:"✨"},...CATEGORIAS].forEach(c=>{
+    const b=el("button",{class:"chip"+(categoriaAtual===c.id?" ativo":""),type:"button"},`${c.ico} ${c.nome}`);
+    b.onclick=()=>{categoriaAtual=c.id; render();};
+    f.appendChild(b);
+  });
+}
+function render(){
+  montarFiltros();
+  const g=document.getElementById("gradePlantas"); g.innerHTML="";
+  const t=semAcento(termo);
+  const lista=PLANTAS.filter(p=>(categoriaAtual==="todas"||p.cat===categoriaAtual) && (!t || semAcento(p.n+" "+p.c+" "+p.dica).includes(t)));
+  const nomeCat = categoriaAtual==="todas" ? "todas as categorias" : CATEGORIAS.find(c=>c.id===categoriaAtual).nome;
+  document.getElementById("contagem").textContent = `${lista.length} ${lista.length===1?"planta":"plantas"} em ${nomeCat}${termo?` para “${termo}”`:""}.`;
+  if(!lista.length){ g.appendChild(el("p",{class:"vazio"},"Nenhuma planta encontrada. Tente outro nome ou escolha “Todas”.")); return; }
+  lista.forEach(p=>{
+    const cat=CATEGORIAS.find(c=>c.id===p.cat);
+    g.appendChild(el("article",{class:"planta"},`
+      <div class="cab"><div class="emo">${p.e}</div><div><h3>${p.n}</h3><div class="cient">${p.c} · ${cat.nome}</div></div></div>
+      <dl><dt>☀️ Luz</dt><dd>${p.luz}</dd><dt>💧 Rega</dt><dd>${p.rega}</dd><dt>🧺 Colheita</dt><dd>${p.colheita}</dd></dl>
+      <div class="dica">💡 ${p.dica}</div>`));
+  });
+}
+function montarLoja(){
+  const g=document.getElementById("gradeLoja");
+  PRODUTOS.forEach(p=>{
+    const msg=encodeURIComponent(`Olá! Tenho interesse em: ${p.n} (${p.p}) — vi no site Casa Verde Sempre.`);
+    const link = WHATSAPP ? `https://wa.me/${WHATSAPP}?text=${msg}` : `mailto:casaverdesempre@gmail.com?subject=${encodeURIComponent("Pedido: "+p.n)}&body=${msg}`;
+    g.appendChild(el("div",{class:"produto"},`
+      <div class="foto">${p.e}</div>
+      <div class="corpo"><h3>${p.n}</h3><div class="preco">${p.p}</div><div class="desc">${p.d}</div>
+      <a class="btn btn-verde" href="${link}" target="_blank" rel="noopener">${WHATSAPP?"Pedir pelo WhatsApp":"Pedir por e-mail"}</a></div>`));
+  });
+}
+
+document.getElementById("formBusca").addEventListener("submit",e=>{
+  e.preventDefault(); termo=document.getElementById("campoBusca").value.trim(); categoriaAtual="todas"; render();
+  document.getElementById("plantas").scrollIntoView({behavior:"smooth"});
+});
+document.getElementById("formNews").addEventListener("submit",e=>{ e.preventDefault(); document.getElementById("msgNews").style.display="block"; e.target.reset(); });
+document.getElementById("btnMenu").onclick=()=>document.getElementById("menu").classList.toggle("aberto");
+document.querySelectorAll("#menu a").forEach(a=>a.addEventListener("click",()=>document.getElementById("menu").classList.remove("aberto")));
+document.getElementById("ano").textContent=new Date().getFullYear();
+
+montarCategorias(); render(); montarLoja();
+</script>
+</body>
+</html>
