@@ -15,6 +15,7 @@
   --verde:#1f5e3b; --verde-2:#2f7d4f; --verde-claro:#e6f1e8; --folha:#7fb069;
   --terra:#8a5a3b; --creme:#faf7f0; --tinta:#1d2621; --cinza:#5b665f; --linha:#dfe6df;
   --raio:16px;
+  --coral:#e5674f; --rosa:#d9548a; --sol:#f2b632; --lilas:#8a63c2; --ceu:#5aa7d6; --blush:#fdeee8;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -37,37 +38,64 @@ nav.menu a:hover{background:var(--verde-claro);color:var(--verde)}
   .btn-menu{display:block}
 }
 /* hero */
-.hero{background:linear-gradient(160deg,var(--verde) 0%,#174a2e 100%);color:#fff;padding:72px 0 88px;position:relative;overflow:hidden}
-.hero h1{font-size:clamp(2.1rem,5vw,3.4rem);max-width:720px}
-.hero p{font-size:1.15rem;max-width:620px;opacity:.92}
+.hero{background:radial-gradient(700px 420px at 92% 10%,#ffd9c7 0%,transparent 60%),radial-gradient(600px 400px at 60% 110%,#f7d6ea 0%,transparent 60%),radial-gradient(500px 360px at -5% 20%,#fff1c9 0%,transparent 60%),#fff8f1;color:var(--tinta);padding:56px 0 80px;position:relative;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;position:relative;z-index:1}
+@media(max-width:900px){.hero-grid{grid-template-columns:1fr}.hero-arte{max-width:420px;margin:0 auto}}
+.selo{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid #f3d9cf;padding:6px 14px;border-radius:999px;font-size:.85rem;font-weight:600;color:var(--coral);margin-bottom:18px;box-shadow:0 4px 14px rgba(229,103,79,.12)}
+.hero h1{font-size:clamp(2.3rem,5.4vw,3.9rem);max-width:720px;letter-spacing:-.01em;color:#22302a}
+.hero h1 em{font-style:italic;background:linear-gradient(90deg,var(--rosa),var(--coral) 55%,var(--sol));-webkit-background-clip:text;background-clip:text;color:transparent;white-space:nowrap}
+.hero p{font-size:1.15rem;max-width:580px;color:#4b5650}
+.numeros{display:flex;gap:28px;flex-wrap:wrap;margin-top:34px}
+.numeros div{display:flex;flex-direction:column}
+.numeros div{padding-left:14px;border-left:3px solid var(--k,#e5674f)}
+.numeros strong{font-family:Fraunces,serif;font-size:2rem;line-height:1;color:#22302a}
+.numeros span{font-size:.85rem;color:var(--cinza)}
+.hero-arte{position:relative}
+.hero-arte svg.cena{width:100%;height:auto;display:block;filter:drop-shadow(0 26px 36px rgba(140,70,50,.18))}
+.flutua{position:absolute;background:#fff;color:var(--tinta);border-radius:14px;padding:10px 14px;box-shadow:0 12px 30px rgba(0,0,0,.18);font-size:.85rem;display:flex;align-items:center;gap:10px;animation:boia 5s ease-in-out infinite}
+.flutua b{display:block;color:var(--verde);font-size:.92rem}
+.flutua .ic{font-size:1.4rem;width:38px;height:38px;border-radius:10px;display:grid;place-items:center}
+.f1{top:12%;left:-6%}.f2{bottom:16%;right:-4%;animation-delay:-2.5s}
+@media(max-width:560px){.f1{left:0}.f2{right:0}}
+@keyframes boia{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+@media(prefers-reduced-motion:reduce){.flutua{animation:none}}
+.onda{position:absolute;left:0;right:0;bottom:-1px;width:100%;height:60px;display:block}
 .hero .acoes{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
 .btn{display:inline-block;padding:13px 22px;border-radius:999px;font-weight:600;text-decoration:none;border:0;cursor:pointer;font:inherit;font-weight:600}
 .btn-claro{background:#fff;color:var(--verde)}
 .btn-contorno{border:1.5px solid rgba(255,255,255,.7);color:#fff}
 .btn-verde{background:var(--verde);color:#fff}
 .btn-verde:hover{background:var(--verde-2)}
-.hero-folhas{position:absolute;right:-60px;bottom:-40px;width:420px;opacity:.18}
-@media(max-width:700px){.hero-folhas{width:260px}}
-.busca{margin-top:30px;max-width:560px;display:flex;background:#fff;border-radius:999px;padding:5px}
+.hero .btn-claro{background:var(--coral);color:#fff;box-shadow:0 10px 24px rgba(229,103,79,.3)}
+.hero .btn-claro:hover{background:#d4553d}
+.hero .btn-contorno{border-color:#22302a;color:#22302a}
+.hero .btn-contorno:hover{background:#22302a;color:#fff}
+.busca{margin-top:28px;max-width:560px;display:flex;background:#fff;border-radius:999px;padding:6px;box-shadow:0 14px 34px rgba(150,80,60,.14);border:1px solid #f1e1d8}
 .busca input{flex:1;border:0;outline:0;padding:10px 16px;font:inherit;border-radius:999px;color:var(--tinta)}
 .busca button{border-radius:999px}
 /* seções */
 section{padding:72px 0}
 .titulo-secao{text-align:center;max-width:720px;margin:0 auto 40px}
-.titulo-secao h2{font-size:clamp(1.7rem,3.5vw,2.4rem);color:var(--verde)}
+.titulo-secao h2{font-size:clamp(1.7rem,3.5vw,2.4rem);color:#22302a}
 .titulo-secao p{color:var(--cinza)}
-.etiqueta{display:inline-block;font-size:.78rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--terra);margin-bottom:8px}
+.etiqueta{display:inline-block;font-size:.78rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--coral);margin-bottom:8px}
 /* categorias */
-.grade-cat{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:16px}
-.cat{background:#fff;border:1px solid var(--linha);border-radius:var(--raio);padding:22px;cursor:pointer;text-align:left;font:inherit;color:inherit;transition:.2s}
-.cat:hover,.cat.ativa{border-color:var(--verde-2);box-shadow:0 8px 24px rgba(31,94,59,.12);transform:translateY(-2px)}
-.cat .ico{font-size:2rem}
-.cat h3{font-size:1.15rem;margin:10px 0 4px}
+.grade-cat{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:18px}
+.cat{--c:#2f7d4f;--f:#e8f3ea;background:#fff;border:1px solid var(--linha);border-radius:20px;padding:24px 22px 20px;cursor:pointer;text-align:left;font:inherit;color:inherit;transition:transform .25s,box-shadow .25s,border-color .25s;position:relative;overflow:hidden;display:flex;flex-direction:column}
+.cat::before{content:"";position:absolute;right:-40px;top:-40px;width:140px;height:140px;border-radius:50%;background:var(--f);transition:transform .35s}
+.cat:hover{border-color:var(--c);box-shadow:0 16px 36px rgba(31,94,59,.14);transform:translateY(-4px)}
+.cat:hover::before{transform:scale(1.25)}
+.cat > *{position:relative}
+.cat .ico{font-size:2rem;width:60px;height:60px;border-radius:16px;display:grid;place-items:center;background:var(--f);box-shadow:inset 0 0 0 1px rgba(0,0,0,.04)}
+.cat h3{font-size:1.18rem;margin:16px 0 6px}
 .cat p{margin:0;color:var(--cinza);font-size:.92rem}
+.cat .qtd{margin-top:auto;padding-top:16px;display:flex;align-items:center;justify-content:space-between;font-weight:600;color:var(--c);font-size:.9rem}
+.cat .qtd i{font-style:normal;width:32px;height:32px;border-radius:50%;display:grid;place-items:center;background:var(--f);transition:.25s}
+.cat:hover .qtd i{background:var(--c);color:#fff;transform:translateX(3px)}
 /* plantas */
 .filtros{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:28px}
 .chip{border:1px solid var(--linha);background:#fff;border-radius:999px;padding:7px 14px;font:inherit;font-size:.9rem;cursor:pointer}
-.chip.ativo{background:var(--verde);color:#fff;border-color:var(--verde)}
+.chip.ativo{background:#22302a;color:#fff;border-color:#22302a}
 .grade-plantas{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:18px}
 .planta{background:#fff;border:1px solid var(--linha);border-radius:var(--raio);padding:20px;display:flex;flex-direction:column}
 .planta .cab{display:flex;align-items:center;gap:12px;margin-bottom:10px}
@@ -77,15 +105,15 @@ section{padding:72px 0}
 .planta dl{display:grid;grid-template-columns:auto 1fr;gap:4px 10px;margin:8px 0;font-size:.9rem}
 .planta dt{font-weight:600;color:var(--verde)}
 .planta dd{margin:0}
-.planta .dica{margin-top:auto;background:var(--creme);border-left:3px solid var(--folha);padding:10px 12px;border-radius:8px;font-size:.9rem}
+.planta .dica{margin-top:auto;background:#fff8f1;border-left:3px solid var(--sol);padding:10px 12px;border-radius:8px;font-size:.9rem}
 .vazio{text-align:center;color:var(--cinza);grid-column:1/-1}
 /* guias */
 .fundo-claro{background:#fff}
 .guias{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:18px}
 details.guia{background:var(--creme);border:1px solid var(--linha);border-radius:var(--raio);padding:4px 22px}
-details.guia summary{cursor:pointer;list-style:none;padding:16px 0;font-family:Fraunces,serif;font-size:1.2rem;font-weight:700;color:var(--verde);display:flex;align-items:center;gap:10px}
+details.guia summary{cursor:pointer;list-style:none;padding:16px 0;font-family:Fraunces,serif;font-size:1.2rem;font-weight:700;color:#22302a;display:flex;align-items:center;gap:10px}
 details.guia summary::-webkit-details-marker{display:none}
-details.guia summary::after{content:"+";margin-left:auto;font-size:1.4rem;color:var(--terra)}
+details.guia summary::after{content:"+";margin-left:auto;font-size:1.4rem;color:var(--coral)}
 details.guia[open] summary::after{content:"–"}
 details.guia ol,details.guia ul{padding-left:20px;margin-top:0}
 details.guia li{margin-bottom:6px}
@@ -93,7 +121,7 @@ details.guia li{margin-bottom:6px}
 .tabela-wrap{overflow-x:auto;border:1px solid var(--linha);border-radius:var(--raio);background:#fff}
 table{border-collapse:collapse;width:100%;min-width:640px;font-size:.93rem}
 th,td{padding:12px 14px;text-align:left;border-bottom:1px solid var(--linha);vertical-align:top}
-th{background:var(--verde-claro);color:var(--verde);font-weight:600}
+th{background:#fdeee8;color:#22302a;font-weight:600}
 tr:last-child td{border-bottom:0}
 .nota{font-size:.88rem;color:var(--cinza);margin-top:12px}
 /* problemas */
@@ -102,10 +130,10 @@ tr:last-child td{border-bottom:0}
 .prob h3{font-size:1.05rem;color:var(--terra)}
 .prob p{margin:.3em 0;font-size:.92rem}
 /* loja */
-.loja{background:linear-gradient(180deg,var(--verde-claro),var(--creme))}
+.loja{background:linear-gradient(180deg,#fdeee8,#fff8f1)}
 .grade-loja{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:18px}
 .produto{background:#fff;border-radius:var(--raio);border:1px solid var(--linha);overflow:hidden;display:flex;flex-direction:column}
-.produto .foto{height:150px;display:grid;place-items:center;font-size:4rem;background:linear-gradient(135deg,#eaf4ea,#f6efe3)}
+.produto .foto{height:150px;display:grid;place-items:center;font-size:4rem;background:linear-gradient(135deg,#fde7ef,#fff1d6)}
 .produto .corpo{padding:18px;display:flex;flex-direction:column;gap:6px;flex:1}
 .produto h3{font-size:1.1rem;margin:0}
 .produto .preco{font-weight:700;color:var(--verde);font-size:1.1rem}
@@ -150,23 +178,90 @@ footer .copy{border-top:1px solid #34403a;padding-top:18px;text-align:center;fon
 </header>
 
 <section class="hero" id="inicio">
-  <svg class="hero-folhas" viewBox="0 0 200 200" aria-hidden="true"><g fill="#fff"><path d="M100 190C40 150 20 90 60 20c30 40 50 100 40 170z"/><path d="M110 190c10-70 40-120 80-140 10 60-20 120-80 140z"/><path d="M95 190C60 170 10 160 0 120c40-10 80 20 95 70z"/></g></svg>
-  <div class="wrap">
-    <span class="etiqueta" style="color:#cfe8c4">Jardinagem sem complicação</span>
-    <h1>Plante, cuide e colha com confiança.</h1>
-    <p>Guias práticos sobre hortaliças, ervas, frutíferas, flores, suculentas, plantas de interior, PANCs e medicinais. Do preparo do solo à colheita, tudo explicado de um jeito simples.</p>
-    <form class="busca" id="formBusca" role="search">
-      <input id="campoBusca" type="search" placeholder="Busque uma planta: tomate, manjericão, jiboia…" aria-label="Buscar planta">
-      <button class="btn btn-verde" type="submit">Buscar</button>
-    </form>
-    <div class="acoes">
-      <a class="btn btn-claro" href="#guias">Comece pelos guias</a>
-      <a class="btn btn-contorno" href="#loja">Ver a lojinha</a>
+  <div class="wrap hero-grid">
+    <div>
+      <span class="selo">🌸 Jardinagem sem complicação</span>
+      <h1>Sua casa mais <em>viva</em> e florida, sempre.</h1>
+      <p>Aprenda a plantar, regar, adubar e colher: flores, hortaliças, ervas, frutíferas, suculentas e plantas de interior, explicadas de um jeito simples.</p>
+      <form class="busca" id="formBusca" role="search">
+        <input id="campoBusca" type="search" placeholder="Busque uma planta: tomate, manjericão, jiboia…" aria-label="Buscar planta">
+        <button class="btn btn-verde" type="submit">Buscar</button>
+      </form>
+      <div class="acoes">
+        <a class="btn btn-claro" href="#guias">Comece pelos guias</a>
+        <a class="btn btn-contorno" href="#loja">Ver a lojinha</a>
+      </div>
+      <div class="numeros">
+        <div style="--k:var(--rosa)"><strong>52</strong><span>fichas de plantas</span></div>
+        <div style="--k:var(--sol)"><strong>8</strong><span>categorias</span></div>
+        <div style="--k:var(--lilas)"><strong>8</strong><span>guias passo a passo</span></div>
+      </div>
+    </div>
+    <div class="hero-arte" aria-hidden="true">
+      <svg class="cena" viewBox="0 0 440 460" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="janela" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#bfe3f6"/><stop offset=".65" stop-color="#ffe2cf"/><stop offset="1" stop-color="#ffd3c2"/></linearGradient>
+          <linearGradient id="vasoA" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f4a261"/><stop offset="1" stop-color="#e07a3f"/></linearGradient>
+          <linearGradient id="vasoB" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f6c9dd"/><stop offset="1" stop-color="#e59bbd"/></linearGradient>
+          <linearGradient id="vasoC" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e98b6d"/><stop offset="1" stop-color="#c96a4e"/></linearGradient>
+        </defs>
+        <!-- arco / janela -->
+        <path d="M60 440 V190 a160 160 0 0 1 320 0 V440 Z" fill="url(#janela)"/>
+        <circle cx="300" cy="150" r="38" fill="#f5c451"/>
+        <path d="M60 440 V190 a160 160 0 0 1 320 0 V440" fill="none" stroke="#fff" stroke-width="8"/>
+        <!-- prateleira -->
+        <rect x="30" y="400" width="380" height="16" rx="8" fill="#8a5a3b"/>
+        <!-- costela-de-adão (vaso grande) -->
+        <g>
+          <path d="M150 300 q-70 -40 -90 -120 q60 0 95 60 z" fill="#2f7d4f"/>
+          <path d="M160 290 q-10 -90 40 -150 q30 70 -5 150 z" fill="#3e9a5f"/>
+          <path d="M175 300 q50 -80 130 -90 q-20 80 -110 110 z" fill="#2f7d4f"/>
+          <path d="M120 230 l25 15 M110 205 l30 20 M190 190 l-5 30 M200 230 l-6 25 M240 250 l-15 15 M260 235 l-20 15" stroke="url(#janela)" stroke-width="7" stroke-linecap="round"/>
+          <path d="M150 300 L118 190 M175 300 L195 160 M180 305 L285 225" stroke="#1f5e3b" stroke-width="3" fill="none"/>
+          <path d="M110 300 h130 l-16 100 h-98 z" fill="url(#vasoA)"/>
+          <rect x="104" y="294" width="142" height="18" rx="6" fill="#e8894b"/>
+        </g>
+        <!-- espada-de-são-jorge -->
+        <g>
+          <path d="M300 340 q-14 -70 -4 -130 q14 60 12 130z" fill="#4d8f3a"/>
+          <path d="M312 340 q4 -90 26 -150 q4 80 -14 150z" fill="#5fa548"/>
+          <path d="M322 345 q22 -60 46 -95 q-6 60 -34 95z" fill="#4d8f3a"/>
+          <path d="M296 300 q6 -4 10 0 M318 270 q6 -4 10 0 M300 260 q6 -4 10 0" stroke="#c9e7a9" stroke-width="3" fill="none"/>
+          <path d="M280 340 h80 l-10 60 h-60 z" fill="url(#vasoB)"/>
+          <rect x="276" y="334" width="88" height="14" rx="5" fill="#f3b8d2"/>
+        </g>
+        <!-- cacto -->
+        <g>
+          <rect x="378" y="300" width="20" height="60" rx="10" fill="#6aa84f"/>
+          <path d="M378 330 q-14 0 -14 -16 v-10" stroke="#6aa84f" stroke-width="10" stroke-linecap="round" fill="none"/>
+          <circle cx="388" cy="298" r="6" fill="#f08aa0"/>
+          <path d="M366 360 h44 l-6 40 h-32 z" fill="#f2b632"/>
+        </g>
+        <!-- vaso de flores -->
+        <g>
+          <path d="M66 400 V320 M52 400 q-6 -50 -22 -72 M82 400 q6 -55 26 -80" stroke="#4d8f3a" stroke-width="4" fill="none"/>
+          <ellipse cx="44" cy="350" rx="12" ry="6" fill="#5fa548" transform="rotate(-40 44 350)"/>
+          <ellipse cx="94" cy="350" rx="12" ry="6" fill="#5fa548" transform="rotate(40 94 350)"/>
+          <g transform="translate(66 312)"><g fill="#f2b632"><ellipse rx="7" ry="14" transform="rotate(0)  translate(0 -12)"/><ellipse rx="7" ry="14" transform="rotate(60) translate(0 -12)"/><ellipse rx="7" ry="14" transform="rotate(120) translate(0 -12)"/><ellipse rx="7" ry="14" transform="rotate(180) translate(0 -12)"/><ellipse rx="7" ry="14" transform="rotate(240) translate(0 -12)"/><ellipse rx="7" ry="14" transform="rotate(300) translate(0 -12)"/></g><circle r="8" fill="#c0612d"/></g>
+          <g transform="translate(28 322)"><g fill="#e0679a"><circle cx="0" cy="-9" r="8"/><circle cx="9" cy="0" r="8"/><circle cx="0" cy="9" r="8"/><circle cx="-9" cy="0" r="8"/></g><circle r="5" fill="#fff3b0"/></g>
+          <g transform="translate(110 316)"><g fill="#8a63c2"><circle cx="0" cy="-9" r="8"/><circle cx="9" cy="0" r="8"/><circle cx="0" cy="9" r="8"/><circle cx="-9" cy="0" r="8"/></g><circle r="5" fill="#ffe082"/></g>
+          <path d="M34 388 h64 l-8 14 h-48 z" fill="#5aa7d6"/>
+          <path d="M30 372 h72 l-6 20 h-60 z" fill="#6fb6e0"/>
+        </g>
+        <!-- folhas pendentes -->
+        <path d="M90 120 q-10 60 10 110" stroke="#3e9a5f" stroke-width="3" fill="none"/>
+        <ellipse cx="92" cy="150" rx="10" ry="6" fill="#3e9a5f" transform="rotate(40 92 150)"/>
+        <ellipse cx="96" cy="185" rx="10" ry="6" fill="#5fa548" transform="rotate(-30 96 185)"/>
+        <ellipse cx="100" cy="220" rx="10" ry="6" fill="#3e9a5f" transform="rotate(35 100 220)"/>
+      </svg>
+      <div class="flutua f1"><span class="ic" style="background:#fff4d6">☀️</span><div><b>Luz certa</b>Sol, meia-sombra ou sombra</div></div>
+      <div class="flutua f2"><span class="ic" style="background:#e3f1fb">💧</span><div><b>Rega sem erro</b>Faça o teste do dedo</div></div>
     </div>
   </div>
+  <svg class="onda" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true"><path d="M0 50 C 240 100 480 0 720 30 S 1200 90 1440 40 V90 H0 Z" fill="#faf7f0"/></svg>
 </section>
 
-<section id="categorias">
+<section id="categorias" style="padding-top:40px">
   <div class="wrap">
     <div class="titulo-secao">
       <span class="etiqueta">Explore</span>
@@ -198,7 +293,7 @@ footer .copy{border-top:1px solid #34403a;padding-top:18px;text-align:center;fon
     </div>
     <div class="guias">
       <details class="guia" open>
-        <summary>🪴 Como preparar o solo e o substrato</summary>
+        <summary>🌿 Como preparar o solo e o substrato</summary>
         <ol>
           <li><strong>Canteiro:</strong> afofe a terra a 20–30 cm de profundidade, retire pedras e raízes e misture 3–5 kg de composto ou esterco curtido por m².</li>
           <li><strong>Vasos:</strong> uma mistura versátil é 1 parte de terra vegetal, 1 de composto orgânico (ou húmus de minhoca) e 1 de areia grossa, perlita ou casca de arroz carbonizada.</li>
@@ -390,14 +485,14 @@ footer .copy{border-top:1px solid #34403a;padding-top:18px;text-align:center;fon
 
 <script>
 const CATEGORIAS = [
-  {id:"hortalicas", nome:"Hortaliças e legumes", ico:"🥬", desc:"Folhas, raízes e frutos para a horta de casa."},
-  {id:"ervas", nome:"Ervas e temperos", ico:"🌿", desc:"Aromáticas fáceis para vaso e janela."},
-  {id:"frutiferas", nome:"Frutíferas", ico:"🍋", desc:"Árvores e arbustos de fruta, inclusive em vaso."},
-  {id:"flores", nome:"Flores e ornamentais", ico:"🌺", desc:"Cor para jardins, canteiros e varandas."},
-  {id:"suculentas", nome:"Suculentas e cactos", ico:"🌵", desc:"Pouca água, muito sol e quase nenhum trabalho."},
-  {id:"interior", nome:"Plantas de interior", ico:"🪴", desc:"Folhagens que vivem bem dentro de casa."},
-  {id:"pancs", nome:"PANCs", ico:"🌼", desc:"Plantas alimentícias não convencionais."},
-  {id:"medicinais", nome:"Medicinais e chás", ico:"🍵", desc:"Plantas de uso tradicional em chás."}
+  {id:"flores", cor:"#c2477a", fundo:"#fce8f0", nome:"Flores e ornamentais", ico:"🌺", desc:"Cor para jardins, canteiros e varandas."},
+  {id:"hortalicas", cor:"#2f7d4f", fundo:"#e6f3e8", nome:"Hortaliças e legumes", ico:"🥬", desc:"Folhas, raízes e frutos para a horta de casa."},
+  {id:"ervas", cor:"#4f8a2b", fundo:"#eef6e2", nome:"Ervas e temperos", ico:"🌿", desc:"Aromáticas fáceis para vaso e janela."},
+  {id:"frutiferas", cor:"#c98a12", fundo:"#fdf3d8", nome:"Frutíferas", ico:"🍋", desc:"Árvores e arbustos de fruta, inclusive em vaso."},
+  {id:"suculentas", cor:"#3f8f6e", fundo:"#e3f4ee", nome:"Suculentas e cactos", ico:"🌵", desc:"Pouca água, muito sol e quase nenhum trabalho."},
+  {id:"interior", cor:"#2e6f86", fundo:"#e2f0f5", nome:"Plantas de interior", ico:"🏡", desc:"Folhagens que vivem bem dentro de casa."},
+  {id:"pancs", cor:"#d0702a", fundo:"#fdeedf", nome:"PANCs", ico:"🌼", desc:"Plantas alimentícias não convencionais."},
+  {id:"medicinais", cor:"#7a5aa6", fundo:"#f0eaf8", nome:"Medicinais e chás", ico:"🍵", desc:"Plantas de uso tradicional em chás."}
 ];
 
 const PLANTAS = [
@@ -448,7 +543,7 @@ const PLANTAS = [
   {n:"Espada-de-são-jorge", c:"Dracaena trifasciata", cat:"interior", e:"🗡️", luz:"Da sombra ao sol", rega:"A cada 15–20 dias", colheita:"—", dica:"Quase indestrutível. O único jeito de matar é regando demais."},
   {n:"Zamioculca", c:"Zamioculcas zamiifolia", cat:"interior", e:"🌱", luz:"Sombra a meia-sombra", rega:"A cada 15 dias", colheita:"—", dica:"Guarda água em rizomas: aguenta esquecimentos e ambientes com pouca luz, como escritórios."},
   {n:"Samambaia", c:"Nephrolepis exaltata", cat:"interior", e:"🌿", luz:"Meia-sombra, sem sol direto", rega:"Frequente; gosta de umidade no ar", colheita:"—", dica:"Folhas secando nas pontas indicam ar seco: borrife água e mantenha longe do ar-condicionado."},
-  {n:"Maranta / Calathea", c:"Goeppertia spp.", cat:"interior", e:"🪴", luz:"Meia-sombra", rega:"Solo levemente úmido", colheita:"—", dica:"As folhas se fecham à noite como se “rezassem”. Prefere água filtrada ou de chuva."},
+  {n:"Maranta / Calathea", c:"Goeppertia spp.", cat:"interior", e:"🌿", luz:"Meia-sombra", rega:"Solo levemente úmido", colheita:"—", dica:"As folhas se fecham à noite como se “rezassem”. Prefere água filtrada ou de chuva."},
   // PANCs
   {n:"Ora-pro-nóbis", c:"Pereskia aculeata", cat:"pancs", e:"🌿", luz:"Sol pleno", rega:"Moderada", colheita:"Folhas após 4–6 meses", dica:"Folhas muito ricas em proteína; usadas refogadas, em omeletes e pães. Cresce como cerca-viva com espinhos."},
   {n:"Taioba", c:"Xanthosoma taioba", cat:"pancs", e:"🍃", luz:"Meia-sombra", rega:"Frequente", colheita:"Folhas após 3–4 meses", dica:"Só consuma COZIDA e tenha certeza da identificação: é parecida com a tinhorão, que é tóxica."},
@@ -484,7 +579,7 @@ function montarCategorias(){
   const g=document.getElementById("gradeCat");
   CATEGORIAS.forEach(c=>{
     const qtd=PLANTAS.filter(p=>p.cat===c.id).length;
-    const b=el("button",{class:"cat",type:"button"},`<div class="ico">${c.ico}</div><h3>${c.nome}</h3><p>${c.desc}</p><p style="margin-top:8px;color:var(--verde-2);font-weight:600">${qtd} plantas →</p>`);
+    const b=el("button",{class:"cat",type:"button",style:`--c:${c.cor};--f:${c.fundo}`},`<div class="ico">${c.ico}</div><h3>${c.nome}</h3><p>${c.desc}</p><div class="qtd">${qtd} plantas<i>→</i></div>`);
     b.onclick=()=>{ categoriaAtual=c.id; termo=""; document.getElementById("campoBusca").value=""; render(); document.getElementById("plantas").scrollIntoView({behavior:"smooth"}); };
     g.appendChild(b);
   });
@@ -508,7 +603,7 @@ function render(){
   lista.forEach(p=>{
     const cat=CATEGORIAS.find(c=>c.id===p.cat);
     g.appendChild(el("article",{class:"planta"},`
-      <div class="cab"><div class="emo">${p.e}</div><div><h3>${p.n}</h3><div class="cient">${p.c} · ${cat.nome}</div></div></div>
+      <div class="cab"><div class="emo" style="background:${cat.fundo}">${p.e}</div><div><h3>${p.n}</h3><div class="cient">${p.c} · ${cat.nome}</div></div></div>
       <dl><dt>☀️ Luz</dt><dd>${p.luz}</dd><dt>💧 Rega</dt><dd>${p.rega}</dd><dt>🧺 Colheita</dt><dd>${p.colheita}</dd></dl>
       <div class="dica">💡 ${p.dica}</div>`));
   });
